@@ -2,4 +2,4 @@ Integrantes:
 Maria Laura Tulian 
 Jeronimo Alvarez
 Francisco Bruno
-Santiago Auat
+Santiago A Auat
