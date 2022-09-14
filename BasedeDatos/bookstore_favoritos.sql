@@ -25,13 +25,13 @@ DROP TABLE IF EXISTS `favoritos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `favoritos` (
-  `idSocio` int NOT NULL,
+  `idusuario` int NOT NULL,
   `idLibro` int NOT NULL,
   `comentario` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idSocio`,`idLibro`),
+  PRIMARY KEY (`idusuario`,`idLibro`),
   KEY `idlibro-f_idx` (`idLibro`),
-  CONSTRAINT `idlibro-f` FOREIGN KEY (`idLibro`) REFERENCES `libro` (`idlibro`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `idsocio-f` FOREIGN KEY (`idSocio`) REFERENCES `usuario` (`dni`) ON DELETE CASCADE ON UPDATE RESTRICT
+  CONSTRAINT `idcliente-f` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`dni`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `idlibro-f` FOREIGN KEY (`idLibro`) REFERENCES `libro` (`idlibro`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-14 11:42:40
+-- Dump completed on 2022-09-14 11:46:28
