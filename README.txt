@@ -1,5 +1,5 @@
 Integrantes:
-Laura Tulian
+Maria Laura Tulian 
 Jeronimo Alvarez
 Francisco Bruno
 Santiago Auat
