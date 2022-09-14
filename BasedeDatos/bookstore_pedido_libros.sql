@@ -18,27 +18,30 @@ USE `bookstore`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `categoria`
+-- Table structure for table `pedido_libros`
 --
 
-DROP TABLE IF EXISTS `categoria`;
+DROP TABLE IF EXISTS `pedido_libros`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `categoria` (
-  `idcategoria` int NOT NULL,
-  `descripcion` varchar(45) NOT NULL,
-  PRIMARY KEY (`idcategoria`)
+CREATE TABLE `pedido_libros` (
+  `idlibro` int NOT NULL,
+  `cantidad` int DEFAULT NULL,
+  `nro_carrito` int NOT NULL,
+  PRIMARY KEY (`nro_carrito`,`idlibro`),
+  KEY `idlibro_idx` (`idlibro`),
+  CONSTRAINT `idlibro` FOREIGN KEY (`idlibro`) REFERENCES `libro` (`idlibro`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `nroCarrito` FOREIGN KEY (`nro_carrito`) REFERENCES `pedido` (`nro_carrito`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `categoria`
+-- Dumping data for table `pedido_libros`
 --
 
-LOCK TABLES `categoria` WRITE;
-/*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES (1,'Ficcion'),(2,'Accion');
-/*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
+LOCK TABLES `pedido_libros` WRITE;
+/*!40000 ALTER TABLE `pedido_libros` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pedido_libros` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

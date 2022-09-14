@@ -18,27 +18,32 @@ USE `bookstore`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `categoria`
+-- Table structure for table `libro`
 --
 
-DROP TABLE IF EXISTS `categoria`;
+DROP TABLE IF EXISTS `libro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `categoria` (
-  `idcategoria` int NOT NULL,
-  `descripcion` varchar(45) NOT NULL,
-  PRIMARY KEY (`idcategoria`)
+CREATE TABLE `libro` (
+  `idlibro` int NOT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
+  `stock` int DEFAULT NULL,
+  `imagen` blob,
+  `clasificacion` varchar(45) DEFAULT NULL,
+  `ISBN` int NOT NULL,
+  `cant_paginas` int DEFAULT NULL,
+  PRIMARY KEY (`idlibro`),
+  UNIQUE KEY `ISBN_UNIQUE` (`ISBN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `categoria`
+-- Dumping data for table `libro`
 --
 
-LOCK TABLES `categoria` WRITE;
-/*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES (1,'Ficcion'),(2,'Accion');
-/*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
+LOCK TABLES `libro` WRITE;
+/*!40000 ALTER TABLE `libro` DISABLE KEYS */;
+/*!40000 ALTER TABLE `libro` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
