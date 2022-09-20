@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `bookstore` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `bookstore`;
+CREATE DATABASE  IF NOT EXISTS `va_alquileres` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `va_alquileres`;
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: bookstore
+-- Host: 127.0.0.1    Database: va_alquileres
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -18,26 +18,27 @@ USE `bookstore`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `autor`
+-- Table structure for table `servicios`
 --
 
-DROP TABLE IF EXISTS `autor`;
+DROP TABLE IF EXISTS `servicios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `autor` (
-  `idautor` int NOT NULL,
-  `nombre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idautor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `servicios` (
+  `CodServicio` int NOT NULL,
+  `DescServicio` varchar(50) NOT NULL,
+  PRIMARY KEY (`CodServicio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `autor`
+-- Dumping data for table `servicios`
 --
 
-LOCK TABLES `autor` WRITE;
-/*!40000 ALTER TABLE `autor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `autor` ENABLE KEYS */;
+LOCK TABLES `servicios` WRITE;
+/*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
+INSERT INTO `servicios` VALUES (1,'arbitros para partido de futbol'),(2,'ball bays para canchas'),(3,'bañeros para competencia de natacion'),(4,'catering'),(5,'cotillon: disfraces, sombreros y souvenires'),(6,'decorado salon o carpa'),(7,'emergencias: paramedicos y transporte'),(8,'jueces de linea para tenis'),(9,'juez de silla para tenis o paddle'),(10,'musica y show'),(11,'dj, equipo de musica y luces'),(12,'seguridad');
+/*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-20 16:08:18
+-- Dump completed on 2022-09-20 16:08:24

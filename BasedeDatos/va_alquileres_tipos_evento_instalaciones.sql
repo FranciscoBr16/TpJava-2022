@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `bookstore` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `bookstore`;
+CREATE DATABASE  IF NOT EXISTS `va_alquileres` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `va_alquileres`;
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: bookstore
+-- Host: 127.0.0.1    Database: va_alquileres
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -18,26 +18,30 @@ USE `bookstore`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `autor`
+-- Table structure for table `tipos_evento_instalaciones`
 --
 
-DROP TABLE IF EXISTS `autor`;
+DROP TABLE IF EXISTS `tipos_evento_instalaciones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `autor` (
-  `idautor` int NOT NULL,
-  `nombre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idautor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `tipos_evento_instalaciones` (
+  `codtipoevento` int NOT NULL,
+  `CodInstalacion` int NOT NULL,
+  PRIMARY KEY (`codtipoevento`,`CodInstalacion`),
+  KEY `tipos_evento_instalaciones_fk1` (`CodInstalacion`),
+  CONSTRAINT `tipos_evento_instalaciones_fk` FOREIGN KEY (`codtipoevento`) REFERENCES `tipos_evento` (`CodTipoEvento`) ON UPDATE CASCADE,
+  CONSTRAINT `tipos_evento_instalaciones_fk1` FOREIGN KEY (`CodInstalacion`) REFERENCES `instalaciones` (`CodInstalacion`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `autor`
+-- Dumping data for table `tipos_evento_instalaciones`
 --
 
-LOCK TABLES `autor` WRITE;
-/*!40000 ALTER TABLE `autor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `autor` ENABLE KEYS */;
+LOCK TABLES `tipos_evento_instalaciones` WRITE;
+/*!40000 ALTER TABLE `tipos_evento_instalaciones` DISABLE KEYS */;
+INSERT INTO `tipos_evento_instalaciones` VALUES (1,1),(2,1),(4,1),(1,2),(2,2),(4,2),(3,3),(3,4),(3,5),(3,6),(5,7),(1,8),(2,8),(4,8),(1,9),(2,9),(4,9),(3,11),(3,12),(3,13),(3,14);
+/*!40000 ALTER TABLE `tipos_evento_instalaciones` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-20 16:08:18
+-- Dump completed on 2022-09-20 16:08:24

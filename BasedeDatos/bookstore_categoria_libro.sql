@@ -18,26 +18,29 @@ USE `bookstore`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `autor`
+-- Table structure for table `categoria_libro`
 --
 
-DROP TABLE IF EXISTS `autor`;
+DROP TABLE IF EXISTS `categoria_libro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `autor` (
-  `idautor` int NOT NULL,
-  `nombre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idautor`)
+CREATE TABLE `categoria_libro` (
+  `id_categoria` int NOT NULL,
+  `id_libro` int NOT NULL,
+  PRIMARY KEY (`id_categoria`,`id_libro`),
+  KEY `fk_libro_idx` (`id_libro`),
+  CONSTRAINT `fk_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`idcategoria`) ON DELETE CASCADE,
+  CONSTRAINT `fk_libro` FOREIGN KEY (`id_libro`) REFERENCES `libro` (`idlibro`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `autor`
+-- Dumping data for table `categoria_libro`
 --
 
-LOCK TABLES `autor` WRITE;
-/*!40000 ALTER TABLE `autor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `autor` ENABLE KEYS */;
+LOCK TABLES `categoria_libro` WRITE;
+/*!40000 ALTER TABLE `categoria_libro` DISABLE KEYS */;
+/*!40000 ALTER TABLE `categoria_libro` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

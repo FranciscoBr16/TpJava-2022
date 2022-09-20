@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `bookstore` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `bookstore`;
--- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: localhost    Database: bookstore
+-- Host: 127.0.0.1    Database: bookstore
 -- ------------------------------------------------------
--- Server version	8.0.25
+-- Server version	8.0.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,12 +26,13 @@ DROP TABLE IF EXISTS `libro`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `libro` (
   `idlibro` int NOT NULL,
-  `descripcion` varchar(45) DEFAULT NULL,
+  `descripcion` varchar(45) NOT NULL,
   `stock` int DEFAULT NULL,
   `imagen` blob,
   `clasificacion` varchar(45) DEFAULT NULL,
   `ISBN` int NOT NULL,
   `cant_paginas` int DEFAULT NULL,
+  `nro_tomo` int DEFAULT NULL,
   PRIMARY KEY (`idlibro`),
   UNIQUE KEY `ISBN_UNIQUE` (`ISBN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-14 11:46:28
+-- Dump completed on 2022-09-20 16:08:18

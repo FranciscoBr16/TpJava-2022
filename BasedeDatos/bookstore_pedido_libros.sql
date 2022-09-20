@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `bookstore` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `bookstore`;
--- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: localhost    Database: bookstore
+-- Host: 127.0.0.1    Database: bookstore
 -- ------------------------------------------------------
--- Server version	8.0.25
+-- Server version	8.0.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,8 +30,8 @@ CREATE TABLE `pedido_libros` (
   `nro_carrito` int NOT NULL,
   PRIMARY KEY (`nro_carrito`,`idlibro`),
   KEY `idlibro_idx` (`idlibro`),
-  CONSTRAINT `idlibro` FOREIGN KEY (`idlibro`) REFERENCES `libro` (`idlibro`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `nroCarrito` FOREIGN KEY (`nro_carrito`) REFERENCES `pedido` (`nro_carrito`) ON DELETE CASCADE ON UPDATE RESTRICT
+  CONSTRAINT `fk_pedido` FOREIGN KEY (`nro_carrito`) REFERENCES `pedido` (`nro_carrito`),
+  CONSTRAINT `idlibro` FOREIGN KEY (`idlibro`) REFERENCES `libro` (`idlibro`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-14 11:46:28
+-- Dump completed on 2022-09-20 16:08:17
