@@ -2,7 +2,7 @@ package entities;
 
 public class Usuario {
 private int dni;
-private String contraseña;
+private String contrasenia;
 private String nombre;
 private String apellido;
 private String mail;
@@ -14,11 +14,11 @@ public int getDni() {
 public void setDni(int dni) {
 	this.dni = dni;
 }
-public String getContraseña() {
-	return contraseña;
+public String getContrasenia() {
+	return contrasenia;
 }
-public void setContraseña(String contraseña) {
-	this.contraseña = contraseña;
+public void setContrasenia(String contrasenia) {
+	this.contrasenia = contrasenia;
 }
 public String getNombre() {
 	return nombre;
