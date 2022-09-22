@@ -29,9 +29,9 @@ CREATE TABLE `favoritos` (
   `idLibro` int NOT NULL,
   `comentario` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idusuario`,`idLibro`),
-  KEY `idlibro-f_idx` (`idLibro`),
-  CONSTRAINT `idcliente-f` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`dni`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `idlibro-f` FOREIGN KEY (`idLibro`) REFERENCES `libro` (`idlibro`) ON DELETE CASCADE ON UPDATE RESTRICT
+  KEY `fk_libro3_idx` (`idLibro`),
+  CONSTRAINT `fk_libro3` FOREIGN KEY (`idLibro`) REFERENCES `libro` (`idlibro`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `idcliente-f` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`dni`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-20 16:12:36
+-- Dump completed on 2022-09-22 12:24:05

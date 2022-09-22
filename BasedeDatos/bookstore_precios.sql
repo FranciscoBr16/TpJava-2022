@@ -28,9 +28,7 @@ CREATE TABLE `precios` (
   `fecha_desde` date NOT NULL,
   `precio_producto` float DEFAULT NULL,
   `id_libro` int NOT NULL,
-  PRIMARY KEY (`fecha_desde`,`id_libro`),
-  KEY `id_libro_idx` (`id_libro`),
-  CONSTRAINT `id_libro` FOREIGN KEY (`id_libro`) REFERENCES `libro` (`idlibro`) ON DELETE CASCADE ON UPDATE RESTRICT
+  PRIMARY KEY (`fecha_desde`,`id_libro`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-20 16:12:35
+-- Dump completed on 2022-09-22 12:24:05

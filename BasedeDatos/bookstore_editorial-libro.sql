@@ -28,9 +28,9 @@ CREATE TABLE `editorial-libro` (
   `codigo_editorial` int NOT NULL,
   `id_libro` int NOT NULL,
   PRIMARY KEY (`codigo_editorial`,`id_libro`),
-  KEY `idLibro-el_idx` (`id_libro`),
-  CONSTRAINT `id_editorial-el` FOREIGN KEY (`codigo_editorial`) REFERENCES `editorial` (`ideditorial`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `idLibro-el` FOREIGN KEY (`id_libro`) REFERENCES `libro` (`idlibro`) ON DELETE CASCADE ON UPDATE RESTRICT
+  KEY `fk_libro2_idx` (`id_libro`),
+  CONSTRAINT `fk_libro2` FOREIGN KEY (`id_libro`) REFERENCES `libro` (`idlibro`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `id_editorial-el` FOREIGN KEY (`codigo_editorial`) REFERENCES `editorial` (`ideditorial`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-20 16:12:36
+-- Dump completed on 2022-09-22 12:24:04

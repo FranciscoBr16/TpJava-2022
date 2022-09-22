@@ -30,7 +30,7 @@ CREATE TABLE `autor_libro` (
   PRIMARY KEY (`id_libro`,`codigo_autor`),
   KEY `codigo_autor-al_idx` (`codigo_autor`),
   CONSTRAINT `codigo_autor-al` FOREIGN KEY (`codigo_autor`) REFERENCES `autor` (`idautor`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `id_libro_al` FOREIGN KEY (`id_libro`) REFERENCES `libro` (`idlibro`) ON DELETE CASCADE
+  CONSTRAINT `fk_libro` FOREIGN KEY (`id_libro`) REFERENCES `libro` (`idlibro`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-20 16:12:37
+-- Dump completed on 2022-09-22 12:24:05

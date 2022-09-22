@@ -29,8 +29,8 @@ CREATE TABLE `alquiler-libro` (
   `idalquiler` int NOT NULL,
   PRIMARY KEY (`id_libro`,`idalquiler`),
   KEY `id-alquiler-al_idx` (`idalquiler`),
-  CONSTRAINT `id-alquiler-al` FOREIGN KEY (`idalquiler`) REFERENCES `alquiler` (`idalquiler`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `id-libro-al` FOREIGN KEY (`id_libro`) REFERENCES `libro` (`idlibro`) ON DELETE CASCADE ON UPDATE RESTRICT
+  CONSTRAINT `fk_idlibro` FOREIGN KEY (`id_libro`) REFERENCES `libro` (`idlibro`),
+  CONSTRAINT `id-alquiler-al` FOREIGN KEY (`idalquiler`) REFERENCES `alquiler` (`idalquiler`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-20 16:12:36
+-- Dump completed on 2022-09-22 12:24:04
